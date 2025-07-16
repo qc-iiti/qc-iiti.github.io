@@ -1,15 +1,13 @@
 import React from "react";
-import styles from '../styles/Footer.module.css'
 
 const Footer : React.FC = () => {
-    return <div className={styles.footer}>
-        <div className={styles.footerSection}>
-            <h4>QC@IIT</h4>
-            <p>Contact us via <a href="mailto:quantum@iiti.ac.in">email</a>.</p>
+    return <div id="Footer">
+        <div className="footerSection">
+            <h4>Quantum Computing @ IIT Indore</h4>
             <p>Made with ❤️ by the QC@IITI Web Dev Team.</p>
-            <a href="https://github.com/qc-iiti/qc-iiti.github.io/issues">See a bug? Raise an Issue!</a>
+            <p>See a bug? Raise an <a href="https://github.com/qc-iiti/qc-iiti.github.io/issues">Issue</a>!</p>
         </div>
-        <div className={styles.footerSection}>
+        <div className="footerSection">
             <h4>
                 Follow Us
             </h4>
@@ -17,7 +15,7 @@ const Footer : React.FC = () => {
                 <a href="http://linkedin.com/company/quantumcomputingclub">LinkedIn</a>
                 <a href="http://instagram.com/">Instagram</a>
         </div>
-        <div className={styles.footerSection}>
+        <div className="footerSection">
             <p>© 2025 Quantum Computing Club, IIT Indore</p>
         </div>
     </div>
