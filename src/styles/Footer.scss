@@ -8,10 +8,24 @@
         color: $fgColor;
         display: flex;
         flex-flow: row wrap;
-        padding: 5%;
+        justify-content: space-evenly;
+        padding: min(2.5vw, 20px);
     
         .footerSection {
-            padding: 5vw;
+            padding: 5vh 5vw;
+            flex-grow: 1;
+            background-color: darken($bgColor, 2%);
+            border-radius: 10pt;
+            margin: min(2.5vw, 20px);
+
+            h4 {
+                font-family: $titleFont;
+                font-weight: 400;
+            }
+
+            &:first-child h4 {
+                text-transform: uppercase;
+            }
         }
 
         a {
@@ -20,7 +34,7 @@
             display: inline-block;
             border-bottom: 2px solid $blueLight;
             padding: 2px;
-            margin: 0 5px;
+            font-family: $titleFont;
 
             transition: border-bottom 0.5s;
 
