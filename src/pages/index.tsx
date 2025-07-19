@@ -1,14 +1,19 @@
 import React from 'react';
-import { Footer } from '@/components/footer'
+import Layout from '@/components/layout/Layout';
+import HeroSection from '@/components/sections/HeroSection';
+import AboutSection from '@/components/sections/AboutSection';
+import PathwaySection from '@/components/sections/PathwaySection';
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
-    <div>
-      <h1>Welcome to QC-IITI Frontend</h1>
-      <p>This is your homepage served by Next.js</p>
-      <Footer/>
+    <div className="homepage">
+      <Layout isHomePage={true}>
+        <HeroSection />
+        <AboutSection />
+        <PathwaySection />
+      </Layout>
     </div>
   );
 };
 
-export default Home;
+export default HomePage;
