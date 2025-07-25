@@ -1,11 +1,14 @@
 @import './Base.scss';
 @import './Footer.scss';
 @import './Variables';
+@import './Navbar.scss';
 
 @media (prefers-color-scheme: light) {
-    @include Footer(#222222, #fff, #8af1ff, #156974)
+    @include Footer(#222222, #fff, #8af1ff, #156974);
+    @include Navbar(#222, #fff, #8af1ff, #156974);
 }
 
 @media (prefers-color-scheme: dark) {
-    @include Footer(#222, #fff, #8af1ff, #156974)
+    @include Footer(#222, #fff, #8af1ff, #156974);
+    @include Navbar(#222, #fff, #8af1ff, #156974);
 }

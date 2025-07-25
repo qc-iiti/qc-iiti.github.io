@@ -1,0 +1,46 @@
+@import './Variables';
+
+@mixin Navbar(
+    $bgColor, $fgColor, $accentPrimary, $accentSecondary
+) {
+    #Navbar {
+        width: 100%;
+        display: flex;
+        background-color: $bgColor;
+        color: $fgColor;
+        justify-content: space-between;
+
+        & > div {
+            display: flex;
+            align-items: center;
+
+            
+
+            &:first-child {
+                font-family: $titleFont;
+                text-transform: uppercase;
+                font-size: 1.2em;
+                flex-grow: 2;
+
+                img {
+                    height: 2em;
+                    padding: 1.2em;
+                }
+            }
+
+            &:nth-child(2) {
+                div {
+                    padding: 10px 20px;
+                    margin: 10px 10px;
+                    cursor: pointer;
+                    transition: background-color 0.2s, color 0.2s;
+
+                    &:hover {
+                        background-color: lightblue;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
