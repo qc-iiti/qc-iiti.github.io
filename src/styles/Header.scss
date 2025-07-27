@@ -1,0 +1,83 @@
+@import './Base.scss';
+@import './Footer.scss';
+@import './Variables';
+
+@media (prefers-color-scheme: light) {
+  .qc-header {
+    @include Footer(#ffffff, #222222, #8af1ff, #156974);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .qc-header {
+    @include Footer(#222222, #ffffff, #8af1ff, #156974);
+  }
+}
+
+.qc-header {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  .qc-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .qc-logo-img {
+      height: 48px;
+      width: 48px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .qc-logo-text {
+      h1 {
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+
+      span {
+        font-size: 0.85rem;
+        opacity: 0.75;
+      }
+    }
+  }
+
+  .qc-nav {
+    ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li a {
+        font-weight: 600;
+        text-decoration: none;
+        color: inherit;
+        font-family: inherit;
+        position: relative;
+
+        &::after {
+          content: '';
+          height: 2px;
+          width: 0;
+          background: currentColor;
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
