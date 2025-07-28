@@ -19,4 +19,3 @@ const Layout: React.FC<LayoutProps> = ({ children, isHomePage }) => {
 };
 
 export default Layout;
-
