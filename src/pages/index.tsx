@@ -1,16 +1,18 @@
 import React from 'react';
 import Layout from '@/components/layout/Layout';
-import HeroSection from '@/components/sections/HeroSection';
-import AboutSection from '@/components/sections/AboutSection';
-import PathwaySection from '@/components/sections/PathwaySection';
+import HeroSection from '@/components/content/HeroSection';
+import AboutSection from '@/components/content/AboutSection';
+import PathwaySection from '@/components/content/PathwaySection';
+import { Footer } from '@/components/layout/footer';
 
 const HomePage: React.FC = () => {
   return (
     <div className="homepage">
-      <Layout isHomePage={true}>
+      <Layout>
         <HeroSection />
         <AboutSection />
         <PathwaySection />
+        <Footer/>
       </Layout>
     </div>
   );
