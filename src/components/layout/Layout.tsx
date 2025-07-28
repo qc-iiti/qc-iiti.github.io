@@ -18,13 +18,5 @@ const Layout: React.FC<LayoutProps> = ({ children, isHomePage }) => {
   );
 };
 
-import React, { ReactNode } from 'react';
-
-const Layout : React.FC <{ children?: ReactNode }> = ({children}) => {
-    return <div>
-            {children}
-        </div>
-}
-
 export default Layout;
 
