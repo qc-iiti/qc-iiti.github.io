@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "@/components/layout/Layout";
-import HeroSection from "@/components/content/HeroSection";
-import AboutSection from "@/components/content/AboutSection";
-import PathwaySection from "@/components/content/PathwaySection";
+import Team from "@/components/content/team";
 
 type ExampleData = {
   title: string;
@@ -14,7 +12,7 @@ const HomePage: React.FC = () => {
   const [data, setData] = useState<ExampleData | null>(null);
 
   useEffect(() => {
-    fetch("/data/exampleData.json")
+    fetch("/data/exampleData.json")//i used this for by chance
       .then((res) => res.json())
       .then((fetchedData) => setData(fetchedData))
       .catch((err) => console.error("Error loading data:", err));
@@ -23,15 +21,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="homepage">
       <Layout isHomePage={true}>
-        <HeroSection />
-        <AboutSection />
-        <PathwaySection />
-        {data && (
-          <section className="text-center p-6">
-            <h2 className="text-2xl font-bold">{data.title}</h2>
-            <p className="text-gray-400">{data.description}</p>
-          </section>
-        )}
+        <Team />
       </Layout>
     </div>
   );

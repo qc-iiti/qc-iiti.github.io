@@ -22,7 +22,7 @@ const Footer : React.FC = () => {
             <p>+91 9136607511 / mems240005009@iiti.ac.in</p>
 
             <h5>Vice-Presidents</h5>
-            <p>Aarush Bindod (+91 xxxxxxxxxxxx / ep240051001@iiti.ac.in)</p>
+            <p>Aarush Bindod (+91 9422747359 / ep240051001@iiti.ac.in)</p>
             <p>V Hemal (+91 xxxxxxxxxxxx / ep240051020@iiti.ac.in)</p>
         </div>
     </div>

@@ -7,10 +7,14 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@react-three/drei": "^10.6.1",
+    "@react-three/fiber": "^9.3.0",
+    "framer-motion": "^12.23.12",
     "next": "^15.4.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "sass": "^1.89.2"
+    "sass": "^1.91.0",
+    "three": "^0.179.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.11",
