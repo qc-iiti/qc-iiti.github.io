@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "@/components/layout/Layout";
-import Team from "@/components/content/team";
+import Team from "@/components/content/Team";
 
 type ExampleData = {
   title: string;

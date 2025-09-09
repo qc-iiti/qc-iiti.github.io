@@ -1,7 +1,7 @@
+import React, { useRef, useEffect, useState, FC } from 'react';
+import Papa from 'papaparse';
 
-
-import React, { useRef, useEffect, FC } from 'react';
-
+// --- STYLES (with responsiveness improvements) ---
 const TeamPageStyles = () => (
   <style>{`
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
@@ -162,7 +162,7 @@ const TeamPageStyles = () => (
     }
 
     .memberCardContainer:hover .memberInfo {
-       transform: translateZ(50px);
+        transform: translateZ(50px);
     }
 
     .memberInfo h3 {
@@ -197,15 +197,23 @@ const TeamPageStyles = () => (
       from { background-position: 200% 0; }
       to { background-position: -200% 0; }
     }
+    
+    /* CSS responsiveness improvements */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2.8rem;
+      }
+      .teamSection h2 {
+        font-size: 2rem;
+      }
+      .pageContainer {
+        padding: 2rem 1rem;
+      }
+    }
   `}</style>
 );
 
-
-//we have to add csv here 
-//proper csv
-//or json ?
-//fix the css and also fix responsiveness
-
+// --- INTERFACES ---
 interface Member {
   initials: string;
   name: string;
@@ -217,45 +225,14 @@ interface TeamSection {
   members: Member[];
 }
 
-const teamData: TeamSection[] = [
-  {
-    title: 'President',
-    members: [
-      { initials: 'AA', name: 'Arham Aneeq', role: 'President' },
-    ],
-  },
-  {
-    title: 'Vice Presidents',
-    members: [
-      { initials: 'AB', name: 'Aarush', role: 'Vice President' },
-      { initials: 'VH', name: 'V hemal', role: 'Vice President' },
-    ],
-  },
-  {
-    title: 'Heads',
-    members: [
-      { initials: 'CJ', name: 'Chloe Jade', role: 'Head of Socials' },
-      { initials: 'DS', name: 'David Synth', role: 'Content Head' },
-    ],
-  },
-  {
-    title: 'Core Team 2',
-    members: [
-      { initials: 'L1', name: 'Liam One', role: 'Core Member' },
-      { initials: 'O2', name: 'Olivia Two', role: 'Core Member' },
-    ],
-  },
-  {
-    title: 'Core Team 1',
-    members: [
-      { initials: 'N3', name: 'Noah Three', role: 'Core Member' },
-      { initials: 'E4', name: 'Emma Four', role: 'Core Member' },
-    ],
-  },
-];
+interface CsvRow {
+  name: string;
+  role: string;
+  initials: string;
+  team_title: string;
+}
 
-
-
+// --- HOOKS and COMPONENTS (unchanged) ---
 const use3DTilt = <T extends HTMLElement>() => {
   const ref = useRef<T>(null);
 
@@ -294,13 +271,7 @@ const use3DTilt = <T extends HTMLElement>() => {
   return ref;
 };
 
-
-
-interface MemberCardProps {
-  member: Member;
-}
-
-const MemberCard: FC<MemberCardProps> = ({ member }) => {
+const MemberCard: FC<{ member: Member }> = ({ member }) => {
   const cardRef = use3DTilt<HTMLDivElement>();
 
   return (
@@ -316,9 +287,62 @@ const MemberCard: FC<MemberCardProps> = ({ member }) => {
   );
 };
 
-
-
+// EEEE MAIN PAGE COMPONENT (with fetching logic) 
 const TeamPage: FC = () => {
+  const [teamData, setTeamData] = useState<TeamSection[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/team.csv');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const csvText = await response.text();
+        
+        // Parse CSV data
+        Papa.parse<CsvRow>(csvText, {
+          header: true,
+          skipEmptyLines: true,
+          complete: (results) => {
+            const parsedData = results.data;
+            
+            // Group members by team_title
+            const groupedByTeam = parsedData.reduce((acc, member) => {
+              const { team_title, ...restOfMember } = member;
+              if (!acc[team_title]) {
+                acc[team_title] = [];
+              }
+              acc[team_title].push(restOfMember);
+              return acc;
+            }, {} as Record<string, Member[]>);
+            
+            // Transform into the structure needed by the component
+            const finalTeamData = Object.entries(groupedByTeam).map(([title, members]) => ({
+              title,
+              members,
+            }));
+            
+            setTeamData(finalTeamData);
+          },
+          error: (err: Error) => {
+            throw new Error(err.message);
+          }
+        });
+
+      } catch (e: any) {
+        setError(`Failed to load team data: ${e.message}`);
+        console.error(e);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array means this runs once on mount
+
   return (
     <>
       <TeamPageStyles />
@@ -328,7 +352,10 @@ const TeamPage: FC = () => {
           <p>Meet the talented individuals who are pushing the boundaries of technology and innovation.</p>
         </header>
 
-        {teamData.map((section) => (
+        {loading && <p>Loading team members...</p>}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        
+        {!loading && !error && teamData.map((section) => (
           <section key={section.title} className="teamSection">
             <h2>{section.title}</h2>
             <div className="memberGrid">
