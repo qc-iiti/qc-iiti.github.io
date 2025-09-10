@@ -1,0 +1,4 @@
+id,title,description,members,tags,github_url,demo_url
+1,Quantum Cryptography,"Prototype on secure communication with quantum algorithms","arham-aneeq; v-hemal","Cryptography,Quantum","https://github.com/qc-iiti/qc-iiti.github.io","https://quantum-demo.example.com"
+2,Cybersecurity Honeypot,"A honeypot to detect and analyze cyber threats","aarush-bindod; v-hemal","Cybersecurity,Network","https://github.com/qc-iiti/honeypot",""
+3,Quantum Simulation,"Classical simulation of quantum circuits","arham-aneeq","Simulation,Quantum","https://github.com/qc-iiti/simulation","https://simulation-demo.example.com"
