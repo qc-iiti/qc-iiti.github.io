@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
   const [data, setData] = useState<ExampleData | null>(null);
 
   useEffect(() => {
-    fetch("/data/exampleData.json")//i used this for by chance
+    fetch("/data/exampleData.json")
       .then((res) => res.json())
       .then((fetchedData) => setData(fetchedData))
       .catch((err) => console.error("Error loading data:", err));

@@ -341,7 +341,7 @@ const TeamPage: FC = () => {
     };
 
     fetchData();
-  }, []); // Empty dependency array means this runs once on mount
+  }, []);
 
   return (
     <>

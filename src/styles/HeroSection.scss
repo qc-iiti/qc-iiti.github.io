@@ -92,6 +92,7 @@
           color: #000000;
           text-align: center;
           font-family: Montserrat, sans-serif;
+          width: 50%;
         }
 
         .glass-card {
@@ -99,7 +100,7 @@
           color: #000000;
         }
 
-        .pathway-boxes {
+.pathway-boxes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
@@ -109,11 +110,11 @@
 }
 
 .pathway-boxes .box {
-    padding: 4rem;
+    padding: 3rem;
     border-radius: 1rem;
     text-align: center;
     font-weight: bold;
-    color: rgb(255, 255, 255); /* Changed to white for better contrast */
+    color: rgb(255, 255, 255); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     font-size: 1.5rem;
@@ -125,14 +126,20 @@
 }
 
 .pathway-boxes .box-red {
-    background: linear-gradient(45deg, #ffb3cc, #fd5176);
+    background: #fd5176;
+    border: 1rem solid #fca5b4;
 }
 .pathway-boxes .box-blue {
-    background: linear-gradient(45deg, #96c7fc, #0070c0);
+    background: #0070c0;
+    border:1rem solid #96c7fc;
 }
 .pathway-boxes .box-green {
-    background: linear-gradient(45deg, #c2f1c8, #199f76);
+    background: #199f76;
+    border: 1rem solid #c2f1c8;
 }
 .pathway-boxes .box-yellow {
-    background: linear-gradient(45deg, #cdc2fe, #896efe);
+    
+  background: #896efe;
+  border: 1rem solid #cdc2fe;
+
 }

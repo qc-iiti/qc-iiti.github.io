@@ -229,7 +229,7 @@ export default function App() {
         {/* Pathway Section */}
         <ContentCard title="Know More" className="glass-card">
           <div className="pathway-boxes">
-            <Link href="/team"><div className="box box-red">Projects</div></Link>
+            <Link href="/projects"><div className="box box-red">Projects</div></Link>
             <Link href="/team"><div className="box box-blue">Our Team</div></Link>
             <Link href="/team"><div className="box box-green">Resources</div></Link>
             <Link href="/team"><div className="box box-yellow">Collabs</div></Link>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '@/components/layout/layout';
+import Layout from '@/components/layout/Layout';
 import styles from '../styles/Projects.module.css';
 
 // These are Node.js modules, so they run on the server during the build
@@ -8,9 +8,23 @@ import path from 'path';
 import Papa from 'papaparse';
 
 // This is your page component. It receives the 'projects' data as a prop.
-const ProjectsPage = ({ projects }) => {
+type Project = {
+  id: string;
+  title: string;
+  description: string;
+  members: string;
+  tags: string;
+  github_url?: string;
+  demo_url?: string;
+};
+
+interface ProjectsPageProps {
+  projects: Project[];
+}
+
+const ProjectsPage: React.FC<ProjectsPageProps> = ({ projects }) => {
   return (
-    <Layout>
+    <Layout isHomePage={true}>
       <div>
         <section className={styles.hero}>
           <h1>Our Innovations</h1>
