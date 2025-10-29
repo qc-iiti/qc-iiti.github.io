@@ -1,0 +1,4 @@
+id,title,description,members,tags,github_url,demo_url
+1,"Post-Quantum Cryptography","An implementation of the Dilithium digital signature algorithm, a candidate for post-quantum security standards.","Your Name","Cryptography,Security","https://github.com/your-username/pqc-project",""
+2,"CyberSec Honeypot","A low-interaction honeypot designed to capture and analyze automated cyber attacks in real-time.","Your Friend's Name","Cybersecurity,Networking","https://github.com/friend-username/honeypot","https://demo.example.com"
+3,"QC Club Website","The official website for the QC IITI club, built with Next.js and deployed for the community.","Web Dev Team","Web Development,Next.js","https://github.com/qc-iiti/qc-iiti.github.io","/"
