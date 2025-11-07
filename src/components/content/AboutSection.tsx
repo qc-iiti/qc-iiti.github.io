@@ -1,5 +1,5 @@
 const AboutSection = () => {
-  return <section>About Section Placeholder</section>;
+  return <section></section>;
 };
 
 export default AboutSection;

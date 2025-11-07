@@ -1,0 +1,139 @@
+/* Basic Reset and Global Theme */
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: #0b3323;
+    color: white;
+    height: 100%;
+
+    /* --- FIX #1: Create a buffer at the top of the page --- */
+    /* This pushes all content down by 90px to make room for the fixed header. */
+    padding-top: 10px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* --- OPTIONAL IMPROVEMENT: Make main content area fill empty space --- */
+main {
+    flex-grow: 1; /* This helps the footer stick to the bottom on short pages. */
+}
+
+/* We need #__next to be a flex container for flex-grow to work on main. */
+#__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 10vh;
+}
+
+
+/* Header Styles */
+.qc-header {
+    /* --- FIX #2: Make the header fixed and keep it on top --- */
+    position: fixed; /* Takes the header out of the normal page flow. */
+    top: 0;          /* Pins it to the very top of the browser window. */
+    left: 0;         /* Ensures it aligns to the left. */
+    width: 100%;     /* Makes it span the full width of the screen. */
+    z-index: 1000;   /* Keeps it layered on top of all other content. */
+
+    /* --- Your existing styles are perfect --- */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #0b3323;
+    border-bottom: 1px solid #3a624c;
+}
+
+.qc-logo {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    max-height: 70px;
+}
+
+.qc-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    max-height: 70px;
+}
+
+.my-icon {
+    width: 50px;
+    height: 50px;
+    fill: rgb(189, 233, 197);
+}
+
+.qc-logo-text h1 {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0;
+}
+
+.qc-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* Note: In your original code, this was .qc-nav li a. */
+/* This might be a typo. Let's make it more general. */
+.qc-nav a {
+    color: #bde9c5;
+    font-weight: bold;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.qc-nav a:hover {
+    color: white;
+}
+
+/* Footer Styles */
+#Footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    background-color: #072519;
+    color: #bde9c5;
+    font-size: 0.9rem;
+}
+
+.footerSection {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footerSection h4, .footerSection h5 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footerSection p {
+    margin: 0.5rem 0;
+    color: #74947c;
+}
+
+.footerSection a {
+    color: #bde9c5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.footerSection a:hover {
+    color: white;
+}

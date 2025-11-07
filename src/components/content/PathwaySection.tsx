@@ -1,5 +1,5 @@
 const PathwaySection = () => {
-  return <section>Pathway Section Placeholder</section>;
+  return <section></section>;
 };
 
 export default PathwaySection;
