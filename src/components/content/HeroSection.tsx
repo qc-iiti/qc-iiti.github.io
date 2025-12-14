@@ -216,21 +216,21 @@ export default function App() {
       {/* Hero Header */}
       <section className="hero-header">
         <div>
-          <Typewriter text="Welcome to quantum computing club of IIT Indore" speed={150}  />
+          <Typewriter text="Welcome to QC @ IIT Indore" speed={150}  />
         </div>
       </section>
 
       <div>
         {/* About Us Section */}
         <ContentCard title="About Us" className="transparent-card" id="about">
-          we are a student-led community advancing quantum computation and information theory, bridging the gap between fundamental principles and real-world applications. Our mission is to foster an inclusive and collaborative space where beginners, enthusiasts, and researchers come together to learn, experiment, and build: contributing to the evolving landscape of quantum technologies.
+          We are a student-led community advancing quantum computation and information theory, bridging the gap between fundamental principles and real-world applications. Our mission is to foster an inclusive and collaborative space where beginners, enthusiasts, and researchers come together to learn, experiment, and build: contributing to the evolving landscape of quantum technologies.
         </ContentCard>
 
         {/* Pathway Section */}
         <ContentCard title="Know More" className="glass-card">
           <div className="pathway-boxes">
             <Link href="/projects"><div className="box box-red">Projects</div></Link>
-            <Link href="/team"><div className="box box-blue">Our Team</div></Link>
+            <Link href="/team"><div className="box box-blue">Team</div></Link>
             <Link href="/team"><div className="box box-green">Resources</div></Link>
             <Link href="/team"><div className="box box-yellow">Collabs</div></Link>
           </div>
