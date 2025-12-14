@@ -211,15 +211,16 @@ export default function App() {
   return (
     <>
     <div className="hero-section">
-      <Background3D />
-
-      {/* Hero Header */}
-      <section className="hero-header">
-        <div>
-          <Typewriter text="Welcome to QC @ IIT Indore" speed={150}  />
-        </div>
-      </section>
-
+      <div>
+        <Background3D />
+  
+        {/* Hero Header */}
+        <section className="hero-header">
+          <div>
+            <Typewriter text="Welcome to QC @ IIT Indore" speed={150}  />
+          </div>
+        </section>
+      </div>
       <div>
         {/* About Us Section */}
         <ContentCard title="About Us" className="transparent-card" id="about">
