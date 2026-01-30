@@ -1,18 +1,10 @@
 import React, { useRef, useEffect, useState, FC } from 'react';
-// Papa is now loaded via a script tag in the HTML wrapper, 
-// We assert its global presence later.
-
-// NOTE: Since this environment cannot access local files like '/team.csv',
-// the fetch logic will likely fail. I've added a mock CSV to ensure the 
-// component renders correctly and demonstrates the parsing logic.
-
-// --- STYLES (Maroon & White Theme - Refactored to match Image Layout) ---
 const TeamPageStyles = () => (
   <>
-    {/* Load PapaParse globally via CDN script tag */}
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     <style>{`
-      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Fira+Code:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
       .pageContainer {
         color: #111111;
