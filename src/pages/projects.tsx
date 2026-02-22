@@ -60,8 +60,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ projects }) => {
   );
 };
 
-// This special Next.js function runs only on the server when the site is built.
-// It reads your CSV and sends the data to your page component.
+
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), 'src', 'data', 'projects.csv');
   const fileContent = fs.readFileSync(filePath, 'utf8');

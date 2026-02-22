@@ -93,10 +93,8 @@ const Background3D: React.FC = () => {
     //depends whole movement on thisss bruh
     const cameraPath = [
       { pos: new THREE.Vector3(3, 3, 2), lookAt: new THREE.Vector3(4, -1, 0) },
-      { pos: new THREE.Vector3(-8, 4, 6), lookAt: new THREE.Vector3(1, 2, -2) },
-      { pos: new THREE.Vector3(5, 12, -10), lookAt: new THREE.Vector3(-3, 3, 2) },
-      { pos: new THREE.Vector3(20, 2, -5), lookAt: new THREE.Vector3(0, 5, -10) },
-      { pos: new THREE.Vector3(0, 5, 14), lookAt: new THREE.Vector3(2, 2, 0) },
+      { pos: new THREE.Vector3(-8, 4, 14), lookAt: new THREE.Vector3(-18, -10, 10) },
+
     ];
     const tempLookAt = new THREE.Vector3();
 
@@ -216,7 +214,7 @@ export default function App() {
       {/* Hero Header */}
       <section className="hero-header">
         <div>
-          <Typewriter text="Welcome to quantum computing club of IIT Indore" speed={150}  />
+          <Typewriter text="Welcome to IIT Indore’s Quantum Computing Club" speed={150}  />
         </div>
       </section>
 
