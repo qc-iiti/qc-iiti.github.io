@@ -118,6 +118,7 @@ const Background3D: React.FC = () => {
       camera.lookAt(tempLookAt);
     };
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); 
 
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
@@ -214,7 +215,7 @@ export default function App() {
       {/* Hero Header */}
       <section className="hero-header">
         <div>
-          <Typewriter text="Welcome to IIT Indore’s Quantum Computing Club" speed={150}  />
+          <Typewriter text="Welcome to the Quantum Computing Club, IIT Indore" speed={150}  />
         </div>
       </section>
 
@@ -227,10 +228,10 @@ export default function App() {
         {/* Pathway Section */}
         <ContentCard title="Know More" className="glass-card">
           <div className="pathway-boxes">
-            <Link href="/projects"><div className="box box-red">Projects</div></Link>
-            <Link href="/team"><div className="box box-blue">Our Team</div></Link>
-            <Link href="/team"><div className="box box-green">Resources</div></Link>
-            <Link href="/team"><div className="box box-yellow">Collabs</div></Link>
+            <Link href="/projects" className="box box-red">Projects</Link>
+            <Link href="/team" className="box box-blue">Our Team</Link>
+            <Link href="/resources" className="box box-green">Resources</Link>
+            <Link href="/collabs" className="box box-yellow">Collabs</Link>
           </div>
         </ContentCard>
       </div>
