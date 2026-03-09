@@ -230,8 +230,8 @@ export default function App() {
           <div className="pathway-boxes">
             <Link href="/projects" className="box box-red">Projects</Link>
             <Link href="/team" className="box box-blue">Our Team</Link>
-            <Link href="/resources" className="box box-green">Resources</Link>
-            <Link href="/collabs" className="box box-yellow">Collabs</Link>
+            <Link href="https://github.com/qc-iiti/Resources" className="box box-green">Resources</Link>
+            <Link href="/" className="box box-yellow">Events</Link>
           </div>
         </ContentCard>
       </div>
