@@ -93,10 +93,8 @@ const Background3D: React.FC = () => {
     //depends whole movement on thisss bruh
     const cameraPath = [
       { pos: new THREE.Vector3(3, 3, 2), lookAt: new THREE.Vector3(4, -1, 0) },
-      { pos: new THREE.Vector3(-8, 4, 6), lookAt: new THREE.Vector3(1, 2, -2) },
-      { pos: new THREE.Vector3(5, 12, -10), lookAt: new THREE.Vector3(-3, 3, 2) },
-      { pos: new THREE.Vector3(20, 2, -5), lookAt: new THREE.Vector3(0, 5, -10) },
-      { pos: new THREE.Vector3(0, 5, 14), lookAt: new THREE.Vector3(2, 2, 0) },
+      { pos: new THREE.Vector3(-8, 4, 14), lookAt: new THREE.Vector3(-18, -10, 10) },
+
     ];
     const tempLookAt = new THREE.Vector3();
 
@@ -120,6 +118,7 @@ const Background3D: React.FC = () => {
       camera.lookAt(tempLookAt);
     };
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); 
 
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
@@ -216,7 +215,7 @@ export default function App() {
       {/* Hero Header */}
       <section className="hero-header">
         <div>
-          <Typewriter text="Welcome to quantum computing club of IIT Indore" speed={150}  />
+          <Typewriter text="Welcome to the Quantum Computing Club, IIT Indore" speed={150}  />
         </div>
       </section>
 
@@ -229,10 +228,10 @@ export default function App() {
         {/* Pathway Section */}
         <ContentCard title="Know More" className="glass-card">
           <div className="pathway-boxes">
-            <Link href="/projects"><div className="box box-red">Projects</div></Link>
-            <Link href="/team"><div className="box box-blue">Our Team</div></Link>
-            <Link href="/team"><div className="box box-green">Resources</div></Link>
-            <Link href="/team"><div className="box box-yellow">Collabs</div></Link>
+            <Link href="/projects" className="box box-red">Projects</Link>
+            <Link href="/team" className="box box-blue">Our Team</Link>
+            <Link href="https://github.com/qc-iiti/Resources" className="box box-green">Resources</Link>
+            <Link href="/" className="box box-yellow">Events</Link>
           </div>
         </ContentCard>
       </div>
